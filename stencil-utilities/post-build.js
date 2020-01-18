@@ -58,7 +58,7 @@ async function updateStorybookAssets() {
     path.resolve(process.cwd(), STORYBOOK_OUTPUT_DIR),
     {
       filter: (src) => {
-        return src.match(/(index.html)$/) ? false : true;
+        return !src.match(/(index.html)$/);
       },
     },
   );

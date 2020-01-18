@@ -31,6 +31,7 @@
 		"@babel/core": "^7.8.3",
 		"@stencil/core": "^1.8.4",
 		"@stencil/sass": "^1.1.1",
+		"@storybook/addon-docs": "^5.3.6",
 		"@storybook/html": "^5.3.6",
 		"@types/jest": "^24.9.0",
 		"@types/node": "^13.1.8",
@@ -47,9 +48,8 @@
 		"lodash": "^4.17.15"
 	},
 	"stencil": {
-		"protocol": "http",
+		"prefix": "wc",
 		"host": "localhost",
-		"port": 3333,
-		"buildDir": "build"
+		"port": 3333
 	}
 }

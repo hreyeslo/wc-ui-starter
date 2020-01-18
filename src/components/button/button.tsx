@@ -12,6 +12,11 @@ export class Button {
   @Prop() test: string = 'Hello World';
 
   render() {
-    return <div class="button">{this.test}</div>;
+    return (
+			<div class="button">
+				{this.test}
+				<img src="assets/img-test.png"></img>
+			</div>
+		);
   }
 }
