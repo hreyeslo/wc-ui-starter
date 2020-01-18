@@ -1,56 +1,55 @@
 {
-  "name": "wc-ui",
-  "version": "0.0.1",
-  "description": "Stencil Component Starter",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "es2015": "dist/esm/index.mjs",
-  "es2017": "dist/esm/index.mjs",
-  "types": "dist/types/index.d.ts",
-  "collection": "dist/collection/collection-manifest.json",
-  "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/wc-ui/wc-ui.js",
-  "files": [
-    "dist/",
-    "loader/"
-  ],
-  "scripts": {
-    "start": "npm-run-all --parallel stencil storybook",
-    "build": "npm-run-all clean build:stencil build:storybook post:build",
-    "generate": "plop",
-    "test": "cross-env STENCIL_ENV=dev stencil test --spec --e2e",
-    "test.watch": "cross-env STENCIL_ENV=dev stencil test --spec --e2e --watchAll",
-    "storybook": "start-storybook -p 6007 -s ./stencil-utilities/public-assets",
-    "clean": "del-cli dist storybook-static",
-    "build:stencil": "cross-env STENCIL_ENV=prod stencil build --docs",
-    "build:storybook": "build-storybook",
-    "stencil": "cross-env STENCIL_ENV=dev stencil build --dev --watch --serve --docs",
-    "prestart": "npm run build:stencil",
-    "post:build": "node ./stencil-utilities/post-build.js"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@stencil/core": "^1.8.4",
-    "@stencil/sass": "^1.1.1",
-    "@storybook/html": "^5.3.6",
-    "@types/jest": "^24.9.0",
-    "@types/node": "^13.1.8",
-    "babel-loader": "^8.0.6",
-    "chalk": "^2.4.2",
-    "cross-env": "^5.2.0",
-    "del-cli": "^1.1.0",
-    "fs-extra": "^7.0.1",
-    "npm-run-all": "^4.1.5",
-    "plop": "^2.2.0"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "lodash": "^4.17.15"
-  },
-  "stencil": {
-    "protocol": "http",
-    "host": "localhost",
-    "port": 3333,
-    "buildDir": "build"
-  }
+	"name": "wc-ui",
+	"version": "0.0.1",
+	"description": "Stencil Component Starter",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"es2015": "dist/esm/index.mjs",
+	"es2017": "dist/esm/index.mjs",
+	"types": "dist/types/index.d.ts",
+	"collection": "dist/collection/collection-manifest.json",
+	"collection:main": "dist/collection/index.js",
+	"unpkg": "dist/wc-ui/wc-ui.js",
+	"files": [
+		"dist/"
+	],
+	"scripts": {
+		"start": "npm-run-all --parallel stencil storybook",
+		"build": "npm-run-all clean build:stencil build:storybook post:build",
+		"generate": "plop",
+		"test": "cross-env STENCIL_ENV=dev stencil test --spec --e2e",
+		"test.watch": "cross-env STENCIL_ENV=dev stencil test --spec --e2e --watchAll",
+		"storybook": "start-storybook -p 6007 -s ./stencil-utilities/public-assets",
+		"clean": "del-cli dist storybook-static",
+		"build:stencil": "cross-env STENCIL_ENV=prod stencil build --docs",
+		"build:storybook": "build-storybook",
+		"stencil": "cross-env STENCIL_ENV=dev stencil build --dev --watch --serve --docs",
+		"prestart": "npm run build:stencil",
+		"post:build": "node ./stencil-utilities/post-build.js"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.8.3",
+		"@stencil/core": "^1.8.4",
+		"@stencil/sass": "^1.1.1",
+		"@storybook/html": "^5.3.6",
+		"@types/jest": "^24.9.0",
+		"@types/node": "^13.1.8",
+		"babel-loader": "^8.0.6",
+		"chalk": "^2.4.2",
+		"cross-env": "^5.2.0",
+		"del-cli": "^1.1.0",
+		"fs-extra": "^7.0.1",
+		"npm-run-all": "^4.1.5",
+		"plop": "^2.2.0"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"lodash": "^4.17.15"
+	},
+	"stencil": {
+		"protocol": "http",
+		"host": "localhost",
+		"port": 3333,
+		"buildDir": "build"
+	}
 }
