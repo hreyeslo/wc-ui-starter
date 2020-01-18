@@ -6,7 +6,7 @@
  * Import the custom addon for adding assets to the manager head.
  */
 import withAssets from '../stencil-utilities/addon-assets';
-import kebabCase from 'lodash.kebabcase';
+import {kebabCase} from 'lodash';
 
 // Constants for the file
 const DEFAULT_NAME = 'my-component';

@@ -10,53 +10,37 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
+  interface WcButton {
     /**
-    * The first name
+    * A test prop
     */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+    'test': string;
   }
 }
 
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLWcButtonElement extends Components.WcButton, HTMLStencilElement {}
+  var HTMLWcButtonElement: {
+    prototype: HTMLWcButtonElement;
+    new (): HTMLWcButtonElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'wc-button': HTMLWcButtonElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent {
+  interface WcButton {
     /**
-    * The first name
+    * A test prop
     */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+    'test'?: string;
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'wc-button': WcButton;
   }
 }
 
@@ -66,7 +50,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'wc-button': LocalJSX.WcButton & JSXBase.HTMLAttributes<HTMLWcButtonElement>;
     }
   }
 }

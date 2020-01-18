@@ -4,7 +4,8 @@
  */
 // Needed for type issue with TS for protocol option in devServer
 import { Config } from '@stencil/core';
-import kebabCase from 'lodash.kebabcase';
+import { sass } from '@stencil/sass';
+import {kebabCase} from 'lodash';
 
 type Protocol = 'http' | 'https';
 type Port = number;
@@ -66,12 +67,18 @@ export const config: Config = {
   devServer: {
     address: host as Address,
     port: port as Port,
-    protocol: protocol as Protocol,
     openBrowser: false,
   },
+	plugins: [
+		sass({
+			injectGlobalPaths: [
+				'src/scss/styles.scss'
+			]
+		})
+	],
   outputTargets: [
     { type: 'dist' },
-    { type: 'docs' },
+    { type: 'docs-readme' },
     /**
      * Output target `www` needed for publishing storybook and hosting them.
      */
@@ -83,9 +90,8 @@ export const config: Config = {
        * Since we are using the `stencil devServer` to serve the output files to `storybooks' devServer`,
        * We need resolve the relative paths on `stencil devServer`.
        */
-      resourcesUrl: getResourcesURL(protocol as Protocol, host, port, normalizedPkgName, buildDir),
+      // resourcesUrl: getResourcesURL(protocol as Protocol, host, port, normalizedPkgName, buildDir),
       buildDir
     },
-  ],
-  globalStyle: 'src/globals/variables.css',
+  ]
 };

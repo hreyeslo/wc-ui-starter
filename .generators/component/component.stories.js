@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/html';
 
-storiesOf('Components/TemplateComponent', module)
+storiesOf('TemplateComponent', module)
   .add('Default', () => `<template-component></template-component>`)
   .add(
     'With Input',

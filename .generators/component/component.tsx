@@ -1,8 +1,8 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'template-component',
-  styleUrl: 'template-component.css',
+  tag: 'tag-template-component',
+  styleUrl: 'template-component.scss',
   shadow: true,
 })
 export class TemplateComponent {
