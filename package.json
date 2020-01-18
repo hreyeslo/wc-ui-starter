@@ -19,7 +19,7 @@
 		"generate": "plop",
 		"test": "cross-env STENCIL_ENV=dev stencil test --spec --e2e",
 		"test.watch": "cross-env STENCIL_ENV=dev stencil test --spec --e2e --watchAll",
-		"storybook": "start-storybook -p 6007 -s ./stencil-utilities/public-assets",
+		"storybook": "start-storybook -p 4300 -s ./stencil-utilities/public-assets",
 		"clean": "del-cli dist storybook-static",
 		"build:stencil": "cross-env STENCIL_ENV=prod stencil build --docs",
 		"build:storybook": "build-storybook",
