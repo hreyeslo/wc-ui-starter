@@ -24,7 +24,7 @@ const {host = 'localhost', port = 3333} = stencil;
  */
 export const config: Config = {
 	namespace: normalizedPkgName,
-	enableCache: false,
+	enableCache: true,
 	devServer: {
 		address: host,
 		port: port,
@@ -48,6 +48,7 @@ export const config: Config = {
 		{
 			type: 'www',
 			dir: './.temp/www',
+			copy: [{src: 'assets', dest: 'build/assets'}],
 			serviceWorker: null // disable service workers
 		}
 	]

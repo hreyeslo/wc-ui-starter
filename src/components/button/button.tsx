@@ -1,22 +1,31 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, getAssetPath, h } from '@stencil/core';
 
 @Component({
-  tag: 'wc-button',
-  styleUrl: 'button.scss',
-  shadow: true,
+	tag: 'wc-button',
+	styleUrl: 'button.scss',
+	shadow: true
 })
 export class Button {
-  /**
-   * A test prop
-   */
-  @Prop() test: string = 'Hello World';
+	/**
+	 * A test prop
+	 */
+	@Prop() text: string = 'Hello World';
 
-  render() {
-    return (
-			<div class="button">
-				{this.test}
-				<img src="assets/img-test.png"></img>
+	/**
+	 * A test asset
+	 */
+	@Prop() image = 'starter.png';
+
+	render() {
+		return (
+			<div class="c-button">
+				<img
+					class="c-button__image"
+					alt="starter image"
+					src={getAssetPath(`./assets/images/${this.image}`)}
+				/>
+				<p class="c-button__text">{this.text}</p>
 			</div>
 		);
-  }
+	}
 }

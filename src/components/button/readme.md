@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default         |
-| -------- | --------- | ----------- | -------- | --------------- |
-| `test`   | `test`    | A test prop | `string` | `'Hello World'` |
+| Property | Attribute | Description  | Type     | Default         |
+| -------- | --------- | ------------ | -------- | --------------- |
+| `image`  | `image`   | A test asset | `string` | `'starter.png'` |
+| `text`   | `text`    | A test prop  | `string` | `'Hello World'` |
 
 
 ----------------------------------------------

@@ -12,9 +12,13 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface WcButton {
     /**
+    * A test asset
+    */
+    'image': string;
+    /**
     * A test prop
     */
-    'test': string;
+    'text': string;
   }
 }
 
@@ -34,9 +38,13 @@ declare global {
 declare namespace LocalJSX {
   interface WcButton {
     /**
+    * A test asset
+    */
+    'image'?: string;
+    /**
     * A test prop
     */
-    'test'?: string;
+    'text'?: string;
   }
 
   interface IntrinsicElements {

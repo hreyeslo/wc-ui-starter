@@ -23,7 +23,7 @@
 		"test.watch": "stencil test --spec --e2e --watchAll",
 		"stencil": "stencil build --dev --watch --serve",
 		"stencil:build": "stencil build --docs",
-		"storybook": "start-storybook -p 4300",
+		"storybook": "start-storybook -p 4300  -s ./.build/client",
 		"storybook:build": "build-storybook",
 		"clean": "del-cli dist storybook-static",
 		"generate": "plop"

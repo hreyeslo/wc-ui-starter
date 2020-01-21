@@ -19,27 +19,27 @@ const normalizedPkgName = kebabCase(name);
 /**
  * Function to get the stencil resources
  */
-// const getStencilResources = () => ({
-// 	'components-css':
-// 		process.env.NODE_ENV === 'development'
-// 			? `http://${host}:${port}/${buildDir}/${normalizedPkgName}.css`
-// 			: `/${buildDir}/${normalizedPkgName}.css`,
-// 	'component-js':
-// 		process.env.NODE_ENV === 'development'
-// 			? `http://${host}:${port}/${buildDir}/${normalizedPkgName}.js`
-// 			: `/${buildDir}/${normalizedPkgName}.js`,
-// 	'component-js-module':
-// 		process.env.NODE_ENV === 'development'
-// 			? `http://${host}:${port}/${buildDir}/${normalizedPkgName}.esm.js`
-// 			: `/${buildDir}/${normalizedPkgName}.esm.js`
-// });
+const getStencilResources = () => ({
+	'components-css':
+		process.env.NODE_ENV === 'development'
+			? `http://${host}:${port}/${buildDir}/${normalizedPkgName}.css`
+			: `/${buildDir}/${normalizedPkgName}.css`,
+	'component-js':
+		process.env.NODE_ENV === 'development'
+			? `http://${host}:${port}/${buildDir}/${normalizedPkgName}.js`
+			: `/${buildDir}/${normalizedPkgName}.js`,
+	'component-js-module':
+		process.env.NODE_ENV === 'development'
+			? `http://${host}:${port}/${buildDir}/${normalizedPkgName}.esm.js`
+			: `/${buildDir}/${normalizedPkgName}.esm.js`
+});
 /**
  * With assets custom decorator
  */
 export default (config) => {
 	return withAssets({
 		assets: {
-			// ...getStencilResources(),
+			...getStencilResources(),
 			...config
 		}
 	});
