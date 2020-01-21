@@ -1,8 +1,8 @@
-import { stencil } from './package.json';
+const config = require('./config.json');
 
 module.exports = function(plop) {
 	// Generator prefix
-	const { prefix = 'wc'} = stencil;
+	const { prefix = 'wc'} = config.stencil;
   // create your generators here
   plop.setGenerator('Component', {
     description: 'Create a stencil JS component',
