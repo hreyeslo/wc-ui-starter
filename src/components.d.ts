@@ -10,13 +10,13 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface WcButton {
+  interface WcStarter {
     /**
-    * A test asset
+    * A image prop
     */
     'image': string;
     /**
-    * A test prop
+    * A text prop
     */
     'text': string;
   }
@@ -25,30 +25,30 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLWcButtonElement extends Components.WcButton, HTMLStencilElement {}
-  var HTMLWcButtonElement: {
-    prototype: HTMLWcButtonElement;
-    new (): HTMLWcButtonElement;
+  interface HTMLWcStarterElement extends Components.WcStarter, HTMLStencilElement {}
+  var HTMLWcStarterElement: {
+    prototype: HTMLWcStarterElement;
+    new (): HTMLWcStarterElement;
   };
   interface HTMLElementTagNameMap {
-    'wc-button': HTMLWcButtonElement;
+    'wc-starter': HTMLWcStarterElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface WcButton {
+  interface WcStarter {
     /**
-    * A test asset
+    * A image prop
     */
     'image'?: string;
     /**
-    * A test prop
+    * A text prop
     */
     'text'?: string;
   }
 
   interface IntrinsicElements {
-    'wc-button': WcButton;
+    'wc-starter': WcStarter;
   }
 }
 
@@ -58,7 +58,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'wc-button': LocalJSX.WcButton & JSXBase.HTMLAttributes<HTMLWcButtonElement>;
+      'wc-starter': LocalJSX.WcStarter & JSXBase.HTMLAttributes<HTMLWcStarterElement>;
     }
   }
 }

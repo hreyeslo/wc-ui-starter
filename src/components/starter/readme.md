@@ -1,4 +1,4 @@
-# wc-button
+# wc-starter
 
 
 
@@ -9,8 +9,8 @@
 
 | Property | Attribute | Description  | Type     | Default         |
 | -------- | --------- | ------------ | -------- | --------------- |
-| `image`  | `image`   | A test asset | `string` | `'starter.png'` |
-| `text`   | `text`    | A test prop  | `string` | `'Hello World'` |
+| `image`  | `image`   | A image prop | `string` | `'starter.png'` |
+| `text`   | `text`    | A text prop  | `string` | `'Hello World'` |
 
 
 ----------------------------------------------

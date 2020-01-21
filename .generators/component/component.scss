@@ -1,4 +1,17 @@
-.template-component{
-    --template-component-color: var(--theme-color);
-    color: var(--template-component-color); 
+.c-template-component {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	min-height: 200px;
+
+	&__image {
+		width: 100px;
+	}
+
+	&__text {
+		font-size: 16px;
+		color: var(--theme-color);
+	}
 }
