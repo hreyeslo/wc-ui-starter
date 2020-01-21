@@ -11,21 +11,22 @@
 	"collection:main": "dist/collection/index.js",
 	"unpkg": "dist/wc-ui/wc-ui.js",
 	"files": [
-		"dist/"
+		"dist/",
+		".temp/loader/"
 	],
 	"scripts": {
 		"start": "npm-run-all --parallel stencil storybook",
-		"build": "npm-run-all clean build:stencil build:storybook post:build",
-		"generate": "plop",
-		"test": "cross-env STENCIL_ENV=dev stencil test --spec --e2e",
-		"test.watch": "cross-env STENCIL_ENV=dev stencil test --spec --e2e --watchAll",
-		"storybook": "start-storybook -p 4300 -s ./stencil-utilities/public-assets",
+		"prestart": "npm run stencil:build",
+		"build": "npm-run-all clean stencil:build storybook:build post:build",
+		"post:build": "node ./stencil-utilities/post-build.js",
+		"test": "stencil test --spec --e2e",
+		"test.watch": "stencil test --spec --e2e --watchAll",
+		"stencil": "stencil build --dev --watch --serve",
+		"stencil:build": "stencil build --docs",
+		"storybook": "start-storybook -p 4300",
+		"storybook:build": "build-storybook",
 		"clean": "del-cli dist storybook-static",
-		"build:stencil": "cross-env STENCIL_ENV=prod stencil build --docs",
-		"build:storybook": "build-storybook",
-		"stencil": "cross-env STENCIL_ENV=dev stencil build --dev --watch --serve --docs",
-		"prestart": "npm run build:stencil",
-		"post:build": "node ./stencil-utilities/post-build.js"
+		"generate": "plop"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.8.3",
@@ -46,10 +47,5 @@
 	"license": "MIT",
 	"dependencies": {
 		"lodash": "^4.17.15"
-	},
-	"stencil": {
-		"prefix": "wc",
-		"host": "localhost",
-		"port": 3333
 	}
 }
