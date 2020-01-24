@@ -1,0 +1,9 @@
+{
+	"stencil": {
+		"prefix": "wc",
+		"host": "localhost",
+		"port": 3333
+	},
+	"storybook": {
+	}
+}
