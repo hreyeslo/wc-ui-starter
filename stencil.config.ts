@@ -40,14 +40,15 @@ export const config: Config = {
 	outputTargets: [
 		{
 			type: 'dist',
-			esmLoaderPath: '../.temp/loader'
+			esmLoaderPath: '../.build/loader'
 		},
 		{
-			type: 'docs-readme'
+			type: 'docs-readme',
+			strict: true
 		},
 		{
 			type: 'www',
-			dir: './.temp/www',
+			dir: './.build/www',
 			copy: [{src: 'assets', dest: 'build/assets'}],
 			serviceWorker: null // disable service workers
 		}

@@ -3,7 +3,7 @@
  */
 const fs = require('fs-extra');
 const path = require('path');
-const pkg = require('../package.json');
+const pkg = require('../../package.json');
 
 // The storybook output directory.
 // Modify this constant as per the output dir option sent to the Storybook CLI
