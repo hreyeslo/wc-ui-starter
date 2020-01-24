@@ -9,6 +9,7 @@ log.txt
 *.sublime-workspace
 
 dist/
+storybook-static/
 .build/
 .stencil/
 .idea/
