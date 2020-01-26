@@ -1,5 +1,15 @@
-import { storiesOf } from '@storybook/html';
+/**
+ * This file use CSF format
+ * https://storybook.js.org/docs/formats/component-story-format
+ */
 
-storiesOf('Starter', module)
-	.add('Default', () => `<wc-starter></wc-starter>`)
-	.add('With Input', () => `<wc-starter text="Starter WC"></wc-starter>`);
+export default {
+  title: 'Starter',
+  parameters: {
+    componentSubtitle: 'Starter webcomponent',
+  }
+};
+
+export const Default = () => '<wc-starter></wc-starter>';
+export const Example1 = () => '<wc-starter text="Starter WC"></wc-starter>';
+export const Example2 = () => '<wc-starter text="Starter WC"></wc-starter>';

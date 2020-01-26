@@ -3,7 +3,7 @@
  */
 const fs = require('fs-extra');
 const path = require('path');
-const pkg = require('../package.json');
+const pkg = require('../../package.json');
 
 // The storybook output directory.
 // Modify this constant as per the output dir option sent to the Storybook CLI
@@ -11,7 +11,7 @@ const pkg = require('../package.json');
 const STORYBOOK_OUTPUT_DIR = 'storybook-static';
 
 // The stencil JS `www` output directory name
-const STENCIL_WWW_DIR = '.temp/www';
+const STENCIL_WWW_DIR = '.build/www';
 /**
  * Get the contents of the file from strorbook-static
  * @param {string} name The name or path to the file under `STORYBOOK_OUTPUT_DIR`

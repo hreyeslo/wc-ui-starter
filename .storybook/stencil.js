@@ -1,7 +1,7 @@
 /**
  * Import the custom addon for adding assets to the manager head.
  */
-import withAssets from '../.build/addons';
+import withAssets from './integration/addons';
 import { kebabCase } from 'lodash';
 
 const { name } = require('../package.json');

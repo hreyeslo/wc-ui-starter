@@ -12,21 +12,22 @@
 	"unpkg": "dist/wc-ui/wc-ui.js",
 	"files": [
 		"dist/",
-		".temp/loader/"
+		".build/loader/"
 	],
 	"scripts": {
 		"start": "npm-run-all --parallel stencil storybook",
 		"prestart": "npm run stencil:build",
 		"build": "npm-run-all clean stencil:build storybook:build post:build",
-		"post:build": "node ./stencil-utilities/post-build.js",
+		"post:build": "node .storybook/integration/post-build.js",
 		"test": "stencil test --spec --e2e",
 		"test.watch": "stencil test --spec --e2e --watchAll",
 		"stencil": "stencil build --dev --watch --serve",
-		"stencil:build": "stencil build --docs",
-		"storybook": "start-storybook -p 4300  -s ./.build/client",
-		"storybook:build": "build-storybook",
+		"stencil:build": "npm run wc:analyze && stencil build --docs",
+		"storybook": "npm run wc:analyze && start-storybook -p 4300  -s .storybook/integration/client",
+		"storybook:build": "npm run wc:analyze && build-storybook",
 		"clean": "del-cli dist storybook-static",
-		"generate": "plop"
+		"generate": "cd .generators && plop",
+		"wc:analyze": "wca analyze 'src/**/*.{js,ts}' --outFile .build/custom-elements.json"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.8.3",
@@ -35,14 +36,15 @@
 		"@storybook/addon-a11y": "^5.3.9",
 		"@storybook/addon-actions": "^5.3.9",
 		"@storybook/addon-backgrounds": "^5.3.9",
-		"@storybook/addon-docs": "^5.3.6",
-		"@storybook/addon-knobs": "^5.3.9",
 		"@storybook/addon-storysource": "^5.3.9",
 		"@storybook/addon-viewport": "^5.3.9",
-		"@storybook/html": "^5.3.6",
-		"@types/jest": "24.0.25",
-		"@types/node": "^13.1.8",
 		"@types/puppeteer": "1.20.3",
+		"@storybook/addon-docs": "^5.3.8",
+		"@storybook/addon-knobs": "^5.3.9",
+		"@storybook/html": "^5.3.8",
+		"@types/jest": "^24.9.0",
+		"@types/node": "^13.1.8",
+		"@types/react": "^16.9.19",
 		"babel-loader": "^8.0.6",
 		"chalk": "^2.4.2",
 		"cross-env": "^5.2.0",
@@ -51,7 +53,9 @@
 		"jest": "24.9.0",
 		"jest-cli": "24.9.0",
 		"npm-run-all": "^4.1.5",
-		"plop": "^2.2.0"
+		"plop": "^2.2.0",
+		"react": "^16.12.0",
+		"web-component-analyzer": "^1.0.2"
 	},
 	"license": "MIT",
 	"dependencies": {
