@@ -1,0 +1,41 @@
+@import '@material/textfield/mdc-text-field';
+
+/** Use ":host" to set styles and dont use additional div as wrapper to prevent innecesary DOM depth  */
+:host {
+  // background-color: red;
+  display: block;
+}
+
+@function swatch($swatch-color, $swatch-alpha:1) {
+  @return unquote("rgba(var(--#{$swatch-color}), #{$swatch-alpha})");
+}
+
+/** Theme overrides
+ * Try to use  the component custom properties API
+ */
+.mdc-text-field {
+  @include mdc-text-field-ink-color(var(--ui-input-field-color-empty));
+  @include mdc-text-field-shape-radius(var(--ui-input-border-radius));
+  @include mdc-text-field-bottom-line-color(var(--ui-input-line-color));
+  @include mdc-text-field-fill-color(var(--ui-input-bg-color));
+  @include mdc-text-field-line-ripple-color(var(--ui-input-line-color-ripple));
+
+  &:hover
+  :not(.mdc-text-field--focused) {
+    @include mdc-text-field-bottom-line-color(var(--ui-input-line-color));
+    @include mdc-text-field-label-color(var(--ui-input-field-color));
+  }
+
+  &.mdc-text-field--focused {
+    @include mdc-text-field-label-color(var(--ui-input-label-color));
+    @include mdc-text-field-ink-color(var(--ui-input-field-color));
+  }
+
+  &.mdc-text-field--invalid{
+    @include mdc-text-field-label-color(var(--ui-input-error-color));
+    @include mdc-text-field-bottom-line-color(var(--ui-input-error-color));
+    @include mdc-text-field-line-ripple-color(var(--ui-input-error-color));
+  }
+
+}
+
