@@ -20,6 +20,9 @@ export namespace Components {
     */
     'text': string;
   }
+  interface WcUiInput {
+    'value': string;
+  }
 }
 
 declare global {
@@ -30,8 +33,15 @@ declare global {
     prototype: HTMLWcStarterElement;
     new (): HTMLWcStarterElement;
   };
+
+  interface HTMLWcUiInputElement extends Components.WcUiInput, HTMLStencilElement {}
+  var HTMLWcUiInputElement: {
+    prototype: HTMLWcUiInputElement;
+    new (): HTMLWcUiInputElement;
+  };
   interface HTMLElementTagNameMap {
     'wc-starter': HTMLWcStarterElement;
+    'wc-ui-input': HTMLWcUiInputElement;
   }
 }
 
@@ -46,9 +56,14 @@ declare namespace LocalJSX {
     */
     'text'?: string;
   }
+  interface WcUiInput {
+    'onEventChange'?: (event: CustomEvent<any>) => void;
+    'value'?: string;
+  }
 
   interface IntrinsicElements {
     'wc-starter': WcStarter;
+    'wc-ui-input': WcUiInput;
   }
 }
 
@@ -59,6 +74,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'wc-starter': LocalJSX.WcStarter & JSXBase.HTMLAttributes<HTMLWcStarterElement>;
+      'wc-ui-input': LocalJSX.WcUiInput & JSXBase.HTMLAttributes<HTMLWcUiInputElement>;
     }
   }
 }

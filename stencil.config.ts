@@ -34,7 +34,8 @@ export const config: Config = {
 		sass({
 			injectGlobalPaths: [
 				'src/scss/styles.scss'
-			]
+			],
+			includePaths: ['./node_modules']
 		})
 	],
 	outputTargets: [
