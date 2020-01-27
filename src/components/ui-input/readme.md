@@ -7,16 +7,16 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `value`  | `value`   |             | `string` | `undefined` |
+| Property | Attribute | Description       | Type     | Default     |
+| -------- | --------- | ----------------- | -------- | ----------- |
+| `value`  | `value`   | Value description | `string` | `undefined` |
 
 
 ## Events
 
-| Event         | Description | Type               |
-| ------------- | ----------- | ------------------ |
-| `eventChange` |             | `CustomEvent<any>` |
+| Event         | Description       | Type               |
+| ------------- | ----------------- | ------------------ |
+| `eventChange` | Event description | `CustomEvent<any>` |
 
 
 ----------------------------------------------

@@ -1,15 +1,28 @@
+import { storiesOf } from '@storybook/html';
+import { text } from '@storybook/addon-knobs';
+
 /**
- * This file use CSF format
- * https://storybook.js.org/docs/formats/component-story-format
+ * Story docs configuration
  */
-
-export default {
-  title: 'Starter',
-  parameters: {
-    componentSubtitle: 'Starter webcomponent',
-  }
-};
-
-export const Default = () => '<wc-starter></wc-starter>';
-export const Example1 = () => '<wc-starter text="Starter WC"></wc-starter>';
-export const Example2 = () => '<wc-starter text="Starter WC"></wc-starter>';
+storiesOf('Starter', module)
+  /**
+   * Default story
+   */
+  .add('Default', () => document.createElement('wc-starter'))
+  /**
+   * Story with text
+   */
+  .add('Dynamic text', () => {
+    const element = document.createElement('wc-starter');
+    element.text = text('Text', 'Starter WC');
+    return element;
+  })
+  /**
+   * Story with text and image
+   */
+  .add('Dynaic text & image', () => {
+    const element = document.createElement('wc-starter');
+    element.text = text('Text', 'Starter WC');
+    element.image = text('Image', 'starter.png');
+    return element;
+  });
