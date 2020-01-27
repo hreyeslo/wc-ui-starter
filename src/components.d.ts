@@ -21,6 +21,9 @@ export namespace Components {
     'text': string;
   }
   interface WcUiInput {
+    /**
+    * Value description
+    */
     'value': string;
   }
 }
@@ -57,7 +60,13 @@ declare namespace LocalJSX {
     'text'?: string;
   }
   interface WcUiInput {
+    /**
+    * Event description
+    */
     'onEventChange'?: (event: CustomEvent<any>) => void;
+    /**
+    * Value description
+    */
     'value'?: string;
   }
 

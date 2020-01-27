@@ -1,5 +1,6 @@
 import { configure, addDecorator } from '@storybook/html';
 import { withKnobs } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
 import withAssets from  './stencil';
 
 /**
@@ -15,6 +16,7 @@ addDecorator(withAssets({
  * Knobs for all stories
  */
 addDecorator(withKnobs);
+addDecorator(withA11y);
 
 // automatically import all files ending in *.stories.js
 const reqSrcStories = require.context('../src/components', true, /.stories.js$/);
